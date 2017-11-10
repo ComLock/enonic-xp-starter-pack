@@ -4,11 +4,13 @@ plugins {
   id 'com.moowork.node' version '1.2.0'
 }
 
+
 repositories {
     mavenLocal()
     jcenter()
     xp.enonicRepo()
 }
+
 
 app {
     name = project.ext.appName
@@ -17,18 +19,27 @@ app {
     vendorUrl = 'http://enonic.com'
 }
 
+
 dependencies {
   compile "com.enonic.xp:core-api:${xpVersion}"
   compile "com.enonic.xp:portal-api:${xpVersion}"
   include "com.enonic.xp:lib-content:${xpVersion}"
   include "com.enonic.xp:lib-portal:${xpVersion}"
-}
+} // dependencies
+
 
 node {
   version = '8.9.0'
 
   // If true, it will download node using above parameters.
   // If false, it will try to use globally installed node.
-  // NOTE: If you have AVN working you set this to false.
+  // NOTE: If you have AVN working you could probably set this to false.
   download = true
-}
+
+  npmVersion = '5.5.1'
+
+  yarnVersion = '1.2.1'
+} // node
+
+build.dependsOn 'yarn_install'
+build.mustRunAfter 'yarn_install'

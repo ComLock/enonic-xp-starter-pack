@@ -1,5 +1,8 @@
 {
   "description": "Pack Starter Kit",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  },
   "engines": {
     "node": "^8.9.0",
     "npm": "^5.5.1"
@@ -17,7 +20,9 @@
     "clean": "./gradlew clean;",
     "deploy": "npm run install-app -- -a su:password -f build/libs/pack-$npm_package_version.jar",
     "install-app": "npm run toolbox -- install-app",
+    "tasks": "./gradlew -q tasks --all",
     "toolbox": "$XP_INSTALL/toolbox/toolbox.sh",
+    "watch": "./gradlew -t build",
     "xp": "$XP_INSTALL/bin/server.sh;",
     "xp:dev": "$XP_INSTALL/bin/server.sh dev;"
   },
