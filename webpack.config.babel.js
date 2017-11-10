@@ -31,9 +31,13 @@ const loaders = [
 
 module.exports = {
   entry,
+  externals: [
+    /\/lib\/xp\/.+/
+  ],
   output: {
     path: DST_RESOURCES_DIR_ABS, // Must be absolute
-    filename: "[name]"
+    filename: "[name]",
+    libraryTarget: 'commonjs'
   },
   module: {
     loaders
