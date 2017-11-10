@@ -67,3 +67,15 @@ webpack.mustRunAfter yarn_install
 
 build.dependsOn webpack
 build.mustRunAfter webpack
+
+
+tasks.withType(Copy) {
+  includeEmptyDirs = false
+}
+
+
+task deploy(type: YarnTask, overwrite: true) {
+  args = [
+    'deploy'
+  ]
+}
