@@ -57,8 +57,8 @@ task webpack(type: NodeTask) {
   args = [
     '--color',
     '--hide-modules',
-    //--bail
-    //--watch
+    //'--bail' // Depends on whether you want to see all errors at once.
+    //'--watch' // This will block so that build never completes
   ]
 }
 
