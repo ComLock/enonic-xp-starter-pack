@@ -1,0 +1,17 @@
+plugins {
+  //id 'java'
+  id 'com.enonic.xp.app' version '1.0.11'
+}
+
+repositories {
+    //mavenLocal()
+    //jcenter()
+    xp.enonicRepo()
+}
+
+dependencies {
+  compile "com.enonic.xp:core-api:${xpVersion}"
+  compile "com.enonic.xp:portal-api:${xpVersion}"
+  include "com.enonic.xp:lib-content:${xpVersion}"
+  include "com.enonic.xp:lib-portal:${xpVersion}"
+}
