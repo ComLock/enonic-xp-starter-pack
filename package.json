@@ -1,0 +1,25 @@
+{
+  "description": "Pack Starter Kit",
+  "engines": {
+    "node": "^8.9.0",
+    "npm": "^5.5.1"
+  },
+  "engineStrict": false,
+  "license": "Apache-2.0",
+  "name": "enonic-xp-starter-pack",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comlock/starter-pack"
+  },
+  "scripts": {
+    "build": "./gradlew build;",
+    "clean": "./gradlew clean;",
+    "deploy": "npm run install-app -- -a su:password -f build/libs/pack-$npm_package_version.jar",
+    "install-app": "npm run toolbox -- install-app",
+    "toolbox": "$XP_INSTALL/toolbox/toolbox.sh",
+    "xp": "$XP_INSTALL/bin/server.sh;",
+    "xp:dev": "$XP_INSTALL/bin/server.sh dev;"
+  },
+  "version": "0.0.1"
+}
